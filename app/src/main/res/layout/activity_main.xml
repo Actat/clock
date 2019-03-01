@@ -14,7 +14,7 @@
         android:layout_marginBottom="8dp"
         android:text="00:00"
         android:textColor="#ffffff"
-        android:textSize="200sp"
+        android:textSize="360sp"
         app:layout_constraintBottom_toTopOf="@+id/temperature"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -28,7 +28,7 @@
         android:layout_marginBottom="60dp"
         android:text="01/01 Sun"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_marginBottom="60dp"
         android:text="20.0 ℃"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/humidity"
         app:layout_constraintStart_toEndOf="@+id/date" />
@@ -54,7 +54,7 @@
         android:layout_marginBottom="60dp"
         android:text="40 %"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

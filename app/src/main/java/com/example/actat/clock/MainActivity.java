@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.sql.Time;
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateDate() {
-        textViewDate.setText(String.valueOf(new SimpleDateFormat("MM/dd").format(new Date(System.currentTimeMillis()))));
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd E", Locale.US);
+        textViewDate.setText(String.valueOf(sdf.format(new Date())));
     }
 
     private void updateTemperature() {
