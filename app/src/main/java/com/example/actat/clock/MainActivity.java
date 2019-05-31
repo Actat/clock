@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import java.sql.Time;
@@ -15,7 +16,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewClock;
+    private TextClock textViewClock;
     private TextView textViewDate;
     private TextView textViewTemperature;
     private TextView textViewHumidity;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         final Runnable rClock = new Runnable() {
             @Override
             public void run() {
-                updateClock();
                 updateDate();
 
                 handlerClock.postDelayed(this, 10);
@@ -87,10 +87,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-    }
-
-    private void updateClock() {
-        textViewClock.setText(String.valueOf(new SimpleDateFormat("HH:mm").format(new Date(System.currentTimeMillis()))));
     }
 
     private void updateDate() {
