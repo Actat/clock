@@ -5,31 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextClock;
 import android.widget.TextView;
 
-import java.sql.Time;
-import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextClock textViewClock;
     private TextView textViewDate;
-    private TextView textViewTemperature;
-    private TextView textViewHumidity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewClock = findViewById(R.id.clock);
         textViewDate = findViewById(R.id.date);
-        textViewTemperature = findViewById(R.id.temperature);
-        textViewHumidity = findViewById(R.id.humidity);
 
         final Handler handlerClock = new Handler();
         final Runnable rClock = new Runnable() {
@@ -42,17 +33,6 @@ public class MainActivity extends AppCompatActivity {
         };
         handlerClock.post(rClock);
 
-        final Handler handlerTemperature = new Handler();
-        final Runnable rTemperature = new Runnable() {
-            @Override
-            public void run() {
-                updateTemperature();
-                updateHumidity();
-
-                handlerTemperature.postDelayed(this, 10000);
-            }
-        };
-        handlerTemperature.post(rTemperature);
     }
 
     @Override
@@ -92,14 +72,6 @@ public class MainActivity extends AppCompatActivity {
     private void updateDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd E", Locale.US);
         textViewDate.setText(String.valueOf(sdf.format(new Date())));
-    }
-
-    private void updateTemperature() {
-        textViewTemperature.setText("20.0 ℃");
-    }
-
-    private void updateHumidity() {
-        textViewHumidity.setText("40 %");
     }
 
 }
